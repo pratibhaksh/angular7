@@ -1,0 +1,14 @@
+ <div class="popular page_section">
+      <div class="row course_boxes">
+             <!-- Popular Course Item -->
+            <div *ngFor="let eventorgniser of intro.eventorgniser" 
+            class="col-lg-4 course_box">
+              <div *ngIf="eventorgniser.id == selected" class="card">
+             <p>{{eventorgniser.readmore}}</p>
+             <button (click)="next()">Next</button>
+             <button (click)="pre()">Previous</button>
+              </div>
+            </div>
+          </div>
+        </div>		
+     

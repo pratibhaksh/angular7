@@ -1,0 +1,364 @@
+<!-- *ngFor="let eventorgniser of intro.slider" -->
+ <!-- <div *ngFor="let eventorgniser of intro.slider">
+	<img src="../assets/images/{{eventorgniser.imge}}" alt="">
+		<h1>{{eventorgniser.title}}</h1>
+		 [style.background-image]="{{'url(../assets/images/'+eventorgniser.imge+')'}}"
+</div>	   -->
+<div class="super_container">
+	<div class="home">
+  		<!-- Hero Slider -->
+        <div class="hero_slider_container"  >
+          <div class="hero_slider owl-carousel">
+            
+            <!-- Hero Slide -->
+            <div class="hero_slide" *ngFor="let eventorgniser of intro.slider">
+			  <div 
+			  class="hero_slide_background" 
+			  [style.background]="'url(../assets/images/' + eventorgniser.imge + ')'"
+			  >
+
+			</div>
+			
+              <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+                <div class="hero_slide_content text-center">
+                  <h1 data-animation-in="fadeInUp" 
+                  data-animation-out="animate-out fadeOut">
+				  {{eventorgniser.title}}
+                </h1>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Hero Slide -->
+            <!-- <div class="hero_slide">
+              <div class="hero_slide_background" style="background-image:url(../assets/images/slider_background.jpg)"></div>
+              <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+                <div class="hero_slide_content text-center">
+                  <h1 data-animation-in="fadeInUp" 
+                  data-animation-out="animate-out fadeOut">
+                  Get your <span>Choice</span> today!</h1>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- Hero Slide -->
+            <!-- <div class="hero_slide">
+              <div class="hero_slide_background" style=":url(../background-imageassets/images/slider_background.jpg)"></div>
+              <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+                <div class="hero_slide_content text-center">
+                  <h1 data-animation-in="fadeInUp" 
+                  data-animation-out="animate-out fadeOut">
+                  Get your <span>Happyness</span> today!</h1>
+                </div>
+              </div>
+            </div> -->
+    
+          </div>
+    
+          <div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
+          <div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
+        </div>
+    
+      </div>
+	<div class="hero_boxes">
+		<div class="hero_boxes_inner">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<i class="fab fa-twitter"></i>
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Our Events Video</h2>
+								<a href="courses.html" class="hero_box_link">view more</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<i class="fab fa-twitter"></i>
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Our Events Gallary</h2>
+								<a href="courses.html" class="hero_box_link">view more</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<i class="fab fa-twitter"></i>
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Book Now</h2>
+								<a href="teachers.html" class="hero_box_link">view more</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1> {{intro.heading}}</h1>
+					</div>
+				</div>
+			</div>
+			<div  class="row course_boxes" >
+		
+		<div  *ngFor="let eventorgniser of intro.eventorgniser" class="col-md-4 course_box" >
+			<div class="card"  >
+				<img class="card-img-top" src="../assets/images/{{eventorgniser.imge}}" alt="https://unsplash.com/@kellybrito">
+				<div class="card-body text-center">
+					<div class="card-title"><a href="courses.html">
+						{{eventorgniser.title}}</a></div>
+					<div class="card-text">
+						Adobe Guide, Layes, Smart Objects etc../.</div>
+						<!-- <span>{{eventorgniser.id}}</span> -->
+						<button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
+						(click)="onEventsClick(eventorgniser.id)">Read More...
+
+						</button>
+						
+				</div>
+				<div class="price_box d-flex flex-row align-items-center">
+					<div class="course_author_image">
+						<img src="../assets/images/{{eventorgniser.orgpic}}" 
+						alt="test" class="img-responsive">
+					</div>
+					<div class="course_author_name">{{eventorgniser.orgname}} - <span>Orgniser</span></div>
+					<div class="course_price d-flex flex-column align-items-center justify-content-center">
+						<span style="font-size:15px;">Read More...</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			</div>
+		</div>		
+	</div>
+
+	<!-- Register -->
+
+	<div class="register">
+
+		<div class="container-fluid">
+			
+			<div class="row row-eq-height">
+				<div class="col-lg-6 nopadding">
+					
+					<!-- Register -->
+
+					<div class="register_section d-flex flex-column align-items-center justify-content-center">
+						<div class="register_content text-center">
+							<h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1 January</h1>
+							<p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
+							<div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 nopadding">
+					
+					<!-- Search -->
+
+					<div class="search_section d-flex flex-column align-items-center justify-content-center">
+						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
+						<div class="search_content text-center">
+							<h1 class="search_title">Search for your course</h1>
+							<form id="search_form" class="search_form" action="post">
+								<input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Course Name" required="required" data-error="Course name is required.">
+								<input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Category">
+								<input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Degree">
+								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">search course</button>
+							</form>
+						</div> 
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Services -->
+
+	<div class="services page_section">
+		
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+							<h1> {{intro.heading2}}</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row services_row">
+
+				<div *ngFor="let eventorgniser of intro.ourServices"
+				 class="col-lg-4  text-center align-items-start">
+					<div class="">
+						<img src="../assets/images/ourservices/{{eventorgniser.serimg}}"
+						 class="img-fluid img-thumbnail">
+					</div>
+					<h3>{{eventorgniser.title}}</h3>
+					<p>{{eventorgniser.description | slice:0:60}} 
+
+						<a routerLink="/serviceDetails/{{eventorgniser.title}}" 
+						class="">Read More...</a>
+					</p>
+				
+				</div>
+
+			
+
+		
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Testimonials -->
+
+	<div class="testimonials page_section">
+		<!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
+		<div class="testimonials_background_container prlx_parent">
+			<div class="testimonials_background prlx" style="background-image:url(../assets/images/testimonials_background.jpg)"></div>
+		</div>
+		<div class="container">
+
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+							<h1> {{intro.heading3}}</h1>
+					</div>
+				</div>
+			</div>
+			<!-- *ngFor="let eventorgniser of intro.clientSay" -->
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					
+					<div class="testimonials_slider_container">
+
+						<!-- Testimonials Slider -->
+						<div class="owl-carousel owl-theme testimonials_slider">
+							
+							<!-- Testimonials Item -->
+							<div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+						<img src="../assets/images/testimonials_user.jpg" alt="">
+										</div>
+										<div class="testimonial_name">james cooper</div>
+										<div class="testimonial_title">Graduate Student</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonials Item -->
+							<div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+											<img src="../assets/images/testimonials_user.jpg" alt="">
+										</div>
+										<div class="testimonial_name">james cooper</div>
+										<div class="testimonial_title">Graduate Student</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonials Item -->
+							<div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+											<img src="../assets/images/testimonials_user.jpg" alt="">
+										</div>
+										<div class="testimonial_name">james cooper</div>
+										<div class="testimonial_title">Graduate Student</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Events -->
+
+	<div class="events page_section">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>{{intro.heading3}}</h1>
+					</div>
+				</div>
+			</div>
+			
+			<div class="event_items">
+
+				<!-- Event Item -->
+				<div class="row event_item">
+					<div  class="col">
+						<div *ngFor="let eventorgniser of intro.upcomingevents" class="row d-flex flex-row align-items-end">
+
+							<div  class="col-lg-2 order-lg-1 order-2">
+								<div class="event_date d-flex flex-column align-items-center justify-content-center">
+									<div class="event_day">{{eventorgniser.date}}</div>
+									<div class="event_month">January</div>
+								</div>
+							</div>
+
+							<div   class="col-lg-6 order-lg-2 order-3">
+								<div class="event_content">
+									<div class="event_name"><a class="trans_200" href="#">{{eventorgniser.address}}</a></div>
+									<div class="event_location">Grand Central Park</div>
+									<p>{{eventorgniser.description}}</p>
+								</div>
+							</div>
+
+							<div class="col-lg-4 order-lg-3 order-1">
+								<div class="event_image">
+									<img src="..//assets/images/{{eventorgniser.eventImg}}" alt="https://unsplash.com/@theunsteady5">
+								</div>
+							</div>
+
+						</div>	
+					</div>
+				</div>
+
+				<!-- Event Item -->
+				
+
+				<!-- Event Item -->
+				
+			</div>
+				
+		</div>
+	</div>
+
+
+</div>

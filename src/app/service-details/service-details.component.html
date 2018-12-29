@@ -1,0 +1,22 @@
+<div class="row services_row">
+
+  <div *ngFor="let eventorgniser of intro.ourServices"
+   class="col-lg-4  text-center align-items-start">
+
+   <div *ngIf="eventorgniser.title == serviceDetails.title" class="card">
+      <img src="../assets/images/ourservices/{{eventorgniser.serimg}}"
+       class="img-fluid img-thumbnail">
+    </div>
+    <h3>{{eventorgniser.title}}</h3>
+    <p>{{eventorgniser.description}} 
+
+     
+    </p>
+  
+  </div>
+
+
+
+
+
+</div>
